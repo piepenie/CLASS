@@ -15,24 +15,81 @@ sys
 
 기본 명령어
 
+DB 조회 == show databases;
+DB 위치로 == use mysql; (mysql = 위치)
+ex) use tbl_user
+테이블 확인 == show tables; or select * from user;
 
+DB 생성 == create database testdb; or show databases;
+테이블 생성 == use testdb;
+ex) create table tbl_user(
+    -> user_id varchar(10) primary key,
+    -> user_password varchar(100) not null,
+    -> user_name varchar(45) not null );
+테이블 생성 결과물 확인할때 >> 테이블 확인 == show tables;
+테이블 내용 확인 == desc (테이블 네임);
+ex) desc tbl_user;
+
+테이블 생성 추가 해석+
 주의깊게 볼것.
 mysql > crate table tbl_product(prod_id int primary key,
 	prod_name varchar(100) not null, prod_category varchar(10) null,
 	prod_details varchar(1024) null, reg_date datetime not null,
 	prod_price int not null );
-
 == table tbl_product 를 만드는데 그 안에 column을 = prod_id int primary key,
 	prod_name varchar(100) not null, prod_category varchar(10) null,
 	prod_details varchar(1024) null, reg_date datetime not null,
-	prod_price int not null 로 만듬
+	prod_price int not null 로 만듬 각 자료형과 제약조건을 거는 것.
 
 cf) PK = primary key 은 모든 레코드가 서로 다른 값을 가지고 있어 각 레코드를 식별할 수 있고,
 NULL값이 존재할 수 없으며 레코드의 값은 중복이 불가능하다. 또한
 테이블에는 하나의 기본키만 가질 수 있지만 경우에 따라 1개 이상의 기본키를 정의할 수도 있다. (다수 열 기본 키, 복합 기본 키)
 NULL = 빈칸을 의미한다.
 
+/* */
+
+컬럼 추가 alter
+alter table 테이블 네임 add column 추가할 칼럼 자료형 제약조건;
+ex) alter table tbl_user add column user_tel varchar(30) null after user_name;
+해당 컬럼 추가 확인 == desc tbl_user;
+cf) 칼럼 추가 삭제 확인시 == desc (테이블 네임); 을 사용.
+
+컬럼 삭제 alter
+== alter table 테이블 네임 drop 삭제할 칼럼 네임;
+ex) alter table tbl_user drop user_password;
+해당 컬럼 삭제 확인 == desc tbl_user;
+
+컬럼 추가 삭제 추가 해석+
 alter table tbl_product add column amonut int not null; > tbl_prodcut 테이블에 컬럼 amount 를 추가
 alter table tbl_product change column prod_price prod_price varchar(100) null;
-> tbl_product 테이블에 컬럼 prod_price 를 prod_price varchar(100)/*변경자료형*/ null/*제한자*/ 로 변경
+cf)tbl_product 테이블에 컬럼 prod_price 를 prod_price varchar(100)/*변경자료형*/ null/*제약조건*/ 로 변경
+
 alter table tbl_product drop prod_details > tbl_product 테이블에 prod_details 를 삭제
+
+/* */
+
+값 삽입
+insert into 테이블 위치(칼럼 위치,칼럼 위치,칼럼 위치) values('값','값','값');
+ex)insert into testdb.tbl_user(user_id,user_name,user_phone) 
+values('user10','홍길동','010-222-3333');
+해당 테이블 값 삽입 확인 select user_id,user_name from tbl_user;
+cf) 테이블 확인 select * from 테이블 네임;
+테이블 부분 확인 select 칼럼, 칼럼 from 테이블 네임;
+or select * from 테이블 네임;
+
+값 수정
+update 테이블 네임 set 수정할 칼럼='값' where 수정 할 칼럼 = '값'; 
+update tbl_user set user_name='철수' where user_id='user20';
+select * from tbl_user;
+
+값 삭제
+delete from 테이블 네임 where 칼럼 = '삭제 해당 값';
+ex) delete from tbl_user where user_id='user10';
+select * from tbl_user;
+
+
+
+
+
+
+
