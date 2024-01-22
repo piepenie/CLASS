@@ -16,13 +16,21 @@ sys
 기본 명령어
 
 
-
-
 주의깊게 볼것.
 mysql > crate table tbl_product(prod_id int primary key,
 	prod_name varchar(100) not null, prod_category varchar(10) null,
 	prod_details varchar(1024) null, reg_date datetime not null,
 	prod_price int not null );
+
+== table tbl_product 를 만드는데 그 안에 column을 = prod_id int primary key,
+	prod_name varchar(100) not null, prod_category varchar(10) null,
+	prod_details varchar(1024) null, reg_date datetime not null,
+	prod_price int not null 로 만듬
+
+cf) PK = primary key 은 모든 레코드가 서로 다른 값을 가지고 있어 각 레코드를 식별할 수 있고,
+NULL값이 존재할 수 없으며 레코드의 값은 중복이 불가능하다. 또한
+테이블에는 하나의 기본키만 가질 수 있지만 경우에 따라 1개 이상의 기본키를 정의할 수도 있다. (다수 열 기본 키, 복합 기본 키)
+NULL = 빈칸을 의미한다.
 
 alter table tbl_product add column amonut int not null; > tbl_prodcut 테이블에 컬럼 amount 를 추가
 alter table tbl_product change column prod_price prod_price varchar(100) null;
