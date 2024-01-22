@@ -20,8 +20,12 @@ DB 위치로 == use mysql; (mysql = 위치)
 ex) use tbl_user
 테이블 확인 == show tables; or select * from user;
 
-DB 생성 == create database testdb; or show databases;
-테이블 생성 == use testdb;
+DB 생성 == create database DB;
+ex) create database tsetdb;
+결과값 확인 == show databases;
+테스트 DB로 == use testdb;
+
+테이블 생성 create table 테이블 네임;
 ex) create table tbl_user(
     -> user_id varchar(10) primary key,
     -> user_password varchar(100) not null,
