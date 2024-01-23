@@ -17,7 +17,7 @@ sys
 실행 CMD // TUI 시작 mysql -u root -p
 DB 조회 == show databases;
 DB 위치로 == use mysql; (mysql = 위치)
-ex) use tbl_user
+ex) use tbl_user;
 테이블 확인 == show tables; or select * from user;
 
 DB 생성 == create database DB;
