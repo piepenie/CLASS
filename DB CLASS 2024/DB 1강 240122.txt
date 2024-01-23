@@ -58,24 +58,24 @@ NULL = 빈칸을 의미한다.
 alter table 테이블 네임 add column 추가할 칼럼 자료형 제약조건;
 ex) alter table tbl_user add column user_tel varchar(30) null after user_name;
 해당 컬럼 추가 확인 == desc tbl_user;
-cf) 칼럼 추가 삭제 확인시 == desc (테이블 네임); 을 사용.
+cf) 칼럼 추가 확인시 == desc (테이블 네임); 을 사용.
 
 컬럼 삭제 alter
 == alter table 테이블 네임 drop 삭제할 칼럼 네임;
 ex) alter table tbl_user drop user_password;
 해당 컬럼 삭제 확인 == desc tbl_user;
 
-컬럼 추가 삭제 추가 해석+
+cf) 컬럼 추가 삭제 추가 해석+
 alter table tbl_product add column amonut int not null; > tbl_prodcut 테이블에 컬럼 amount 를 추가
 alter table tbl_product change column prod_price prod_price varchar(100) null;
-cf)tbl_product 테이블에 컬럼 prod_price 를 prod_price varchar(100)/*변경자료형*/ null/*제약조건*/ 로 변경
 
-alter table tbl_product drop prod_details > tbl_product 테이블에 prod_details 를 삭제
+tbl_product 테이블에 컬럼 prod_price 를 prod_price varchar(100)/*변경자료형*/ null/*제약조건*/ 로 변경
+alter table tbl_product drop prod_details > tbl_product 테이블에 prod_details 를 삭제 
 
 칼럼 수정 alter
 alter table 테이블 네임 change column 수정할 칼럼 네임 수정될 칼럼 네임 자료형 제약조건;
 ex)alter table tbl_user change column user_tel user_phone varchar(100) not null;
-해당 컬럼 삭제 확인 == desc tbl_user;
+해당 컬럼 수정 확인 == desc tbl_user;
 
 /* */
 
