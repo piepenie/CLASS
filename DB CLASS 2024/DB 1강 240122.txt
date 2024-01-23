@@ -81,7 +81,7 @@ ex)alter table tbl_user change column user_tel user_phone varchar(100) not null;
 
 값 삽입
 insert into 테이블 위치(칼럼 위치,칼럼 위치,칼럼 위치) values('값','값','값');
-ex)insert into testdb.tbl_user(user_id,user_name,user_phone) 
+ex)insert into testdb.tbl_user(user_id,user_name,user_phone)
 values('user10','홍길동','010-222-3333');
 해당 테이블 값 삽입 확인 select user_id,user_name from tbl_user;
 cf) 테이블 확인 select * from 테이블 네임;
