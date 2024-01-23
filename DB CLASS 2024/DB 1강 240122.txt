@@ -21,7 +21,9 @@ ex) use tbl_user
 테이블 확인 == show tables; or select * from user;
 
 DB 생성 == create database DB;
-ex) create database tsetdb;
+ex) create database testdb;
+DB 삭제 == drop database DB;
+ex) drop database testdb;
 결과값 확인 == show databases;
 테스트 DB로 == use testdb;
 
