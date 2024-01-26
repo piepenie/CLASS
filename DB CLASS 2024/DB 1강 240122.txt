@@ -35,6 +35,8 @@ ex) create table tbl_user(
 테이블 생성 결과물 확인할때 >> 테이블 확인 == show tables;
 테이블 내용 확인 == desc (테이블 네임);
 ex) desc tbl_user;
+테이블 내용 확인(2) == show columns from (테이블 네임);
+ex) show columns from tbl_user;
 
 테이블 생성 추가 해석+
 주의깊게 볼것.
