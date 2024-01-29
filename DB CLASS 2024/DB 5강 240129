@@ -1,2 +1,55 @@
-kf_테이블네임_테이블네임_컬럼네임(fk)
-refer
+fk_테이블네임_테이블네임_
+
+강의장
+pk
+
+
+-- 00 확인
+use shopdb;
+show tables;
+select * from usertbl;
+select * from buytbl;
+desc usertbl;
+desc buytbl;
+
+-- 01 select 
+select * from usertbl;
+select userid,birthyear from usertbl;
+select userid as '아이디' , birthyear as '생년월일' from usertbl;
+select 
+userid as '아이디' , birthyear as '생년월일' , concat(mobile1, '-', mobile2) as '연락처'
+from usertbl;
+
+-- 02 select where(조건절 - 비교연산자)
+select * from usertbl where name='김경호'; -- 동등 비교 연산자(=)
+select * from usertbl where userId='LSG'; -- 동등 비교 연산자(=)
+select * from usertbl where birthyear >=1970;	-- 대소 비교 연산자
+select * from usertbl where height <=170;		-- 대소 비교 연산자
+
+-- 03 select where(조건절 - 논리연산자)
+select * from usertbl where birthyear >= 1970 and height >=180;	-- and 연산자(참 and 참)
+select * from usertbl where birthyear >= 1970 or height >=180;	-- or 연산자 ([참 or 참], [거짓 or 참], [참 or 거짓]) 을 만족하는 경우
+
+select * from usertbl where height >=170 and height <=180;
+select * from usertbl where height between 170 and 180;
+
+-- in(포함 문자열(완성된문자열)), like(포함 문자열(미완성문자열 필터링))
+select * from usertbl where addr in ('서울','경남');
+select * from usertbl where addr='경남' or addr='서울';
+select * from usertbl where name='김범수';
+
+select * from usertbl where name like '김%'; -- % 길이제한 없는 모든 문자
+select * from usertbl where name like '%수'; -- % 길이제한 없는 모든 문자
+select * from usertbl where name like '김_'; -- _ 개수 만큼의 길이제한이 있는 모든 문자
+select * from usertbl where name like '%경%'; -- _ 개수 만큼의 길이제한이 있는 모든 문자
+
+--
+
+select * from buytbl;
+select * from buytbl where amount >=5;
+select userId, prodName from buytbl where price between 50 and 500; -- select = 해당 열을 지정하는 의미
+select * from buytbl where amount >=10 or price >=100;
+select * from buytbl where userId like 'K%';
+select * from buytbl where groupName='서적' or groupName='전자';
+select * from buytbl where prodName='책' or userId='%w';
+select * from buytbl where groupName !=''; -- != 을 제외하고 라는 의미
