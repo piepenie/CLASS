@@ -47,9 +47,15 @@ select * from usertbl where name like '%경%'; -- _ 개수 만큼의 길이제�
 
 select * from buytbl;
 select * from buytbl where amount >=5;
-select userId, prodName from buytbl where price between 50 and 500; -- select = 해당 열을 지정하는 의미
+select userId, prodName from buytbl where price between 50 and 500;
+select userId, prodName from buytbl where price >= 50 and price <=500;
 select * from buytbl where amount >=10 or price >=100;
 select * from buytbl where userId like 'K%';
 select * from buytbl where groupName='서적' or groupName='전자';
+select * from buytbl where groupName in ('서적','전자');
+--
 select * from buytbl where prodName='책' or userId='%w';
-select * from buytbl where groupName !=''; -- != 을 제외하고 라는 의미
+select * from buytbl where prodName='책' or userId like '%w'; 해당 내용차이 확인
+--
+select * from buytbl where groupName !='null';
+select * from buytbl where groupName <>'null';
