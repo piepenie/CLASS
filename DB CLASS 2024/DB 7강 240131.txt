@@ -100,7 +100,31 @@ desc tbl_b;
 -- SET DEFAULT	: PK열의 값이 변경시 FK 열의 값은 Default 로 설정된 기본값을 적용
 -- NO ACTION	: PK열의 값이 변경시 FK 열의 값은 변경 되지 않음으로 설정
 
--- UNIQUE
+create table tbl_c(
+	id int primary key,
+    tbl_a_id int,
+    name varchar(45),
+    constraint Fk_tbl_c_tbl_a foreign key(tbl_a_id) references tbl_a(id)
+    on update cascade
+    on delete set null
+);
+desc tbl_c;
+
+-- 문제 
+-- buytbl 을 buytbl_copy 로 구조+데이터 복사(create table+select 이용) 이후
+-- num 를 pk설정
+-- userid를 FK 설정(on delete restrict on update cascade)
+
+create table buytbl_copy_2(select * from buytbl);
+select * from buytbl_copy_2;
+desc buytbl_copy_2;
+alter table buytbl_copy_2 add constraint PK_buytbl_copy_2 primary key(num);
+alter table buytbl_copy_2 add constraint FK_buytbl_copy_2 foreign key(userID) references buytbl(userID) 
+on update restrict on delete cascade;
+desc buytbl_copy;
+
+-- UNIQUE(중복허용x , NULL o) - Email 등록
+
 
 -- CHECK
 
