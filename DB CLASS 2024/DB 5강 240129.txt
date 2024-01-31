@@ -59,3 +59,5 @@ select * from buytbl where prodName='책' or userId like '%w'; 해당 내용차�
 --
 select * from buytbl where groupName !='null';
 select * from buytbl where groupName <>'null';
+
+
