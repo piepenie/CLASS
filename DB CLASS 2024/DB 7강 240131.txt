@@ -1,4 +1,4 @@
--- INSERT
+ㅌ-- INSERT
 use shopdb;
 select * from tbl_buy_copy3;
 -- 여러 값 삽입
@@ -124,8 +124,56 @@ on update restrict on delete cascade;
 desc buytbl_copy;
 
 -- UNIQUE(중복허용x , NULL o) - Email 등록
-
+create table tbl_a(
+	id int primary key,
+    name varchar(45),
+    email varchar(100) unique
+);
+create table tbl_b(
+	id int primary key,
+    name varchar(45),
+    email varchar(100),
+    constraint uk_email unique(email)
+);
+create table tbl_c(
+	id int primary key,
+    name varchar(45),
+    email varchar(100)
+);
+desc tbl_c;
+alter table tbl_c add constraint uk_tbl_c_email unique(email);
+desc tbl_c;
+alter table tbl_c drop constraint uk_tbl_c_email;
+desc tbl_c;
 
 -- CHECK
+create table tbl_d(
+	id int primary key,
+    name varchar(50),
+    age int check(age>=20 and age<=50),
+    addr varchar(5),
+    constraint CK_ADDR check(addr in('대구','부산','대전'))
+);
+desc tbl_d;
+select * from information_schema.check_constraints;
+select * from tbl_d;
+
+alter table tbl_d drop check CK_ADDR;
+select * from information_schema.check_constraints;
 
 -- DEFAULT
+create table tbl_e(
+	id int primary key,
+    name varchar(45) default '이름없순',
+    addr varchar(100)
+);
+desc tbl_e;
+insert into tbl_e values(1,'홍길동',null);
+select * from tbl_e;
+insert into tbl_e(id) values(2);
+select * from tbl_e; 
+
+/
+alter table tbl_e alter column name addr set default '대구';
+alter table tbl_e alter column name addr set default;
+/ 이부분이 자꾸 오류 뜸 왜?
