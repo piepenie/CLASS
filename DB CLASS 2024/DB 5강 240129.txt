@@ -43,7 +43,18 @@ select * from usertbl where name like '%수'; -- % 길이제한 없는 모든 �
 select * from usertbl where name like '김_'; -- _ 개수 만큼의 길이제한이 있는 모든 문자
 select * from usertbl where name like '%경%'; -- _ 개수 만큼의 길이제한이 있는 모든 문자
 
---
+-- 문제 
+-- 1 구매양(amount)가 5개 이상인 행을 출력
+select * from buytbl where amount >= 5;
+-- 2 가격이(price) 50 이상 500 이하인 행의 UserID와 prodName 만 촐력
+select UserID,prodName from buytbl where price >=50 and price <=500;
+select UserID,prodName from buytbl where price between 50 and 500;
+-- 3 구매양(amount)이 10이상 이거나 가격이 100 이상인 행 출력
+select * from buytbl where amount >= 10 or price >= 100;
+-- 4 UserId 가 K로 시작하는 행 출력
+select * from buytbl where UserId like 'K%';
+-- 5 '서적' 이거나 '전자' 인 행 출력
+
 
 select * from buytbl;
 select * from buytbl where amount >=5;
