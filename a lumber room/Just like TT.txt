@@ -121,3 +121,17 @@ select * from information_schema.table_constraints
 where table_name = 'tbl_book';
 select * from information_schema.table_constraints
 where table_name = 'tbl_rental';
+
+create index idx_member_addr on tbl_member (member_addr);
+create index idx_book_author on tbl_book (book_author);
+create index idx_book_name on tbl_book (book_name);
+create index idx_publisher on tbl_book (publisher);
+
+show index from tbl_member;
+show index from tbl_book;
+
+create view View_ShowRental as
+select tbl_rental.rental_id,tbl_member.member_name,tbl_book.book_name
+from tbl_rental
+inner join tbl_member on tbl_rental.member_id = tbl_member.member_id
+inner join tbl_book on tbl_rental.book_code = tbl_book.book_code;
