@@ -114,3 +114,10 @@ insert into tbl_rental(rental_id,book_code,member_id)
 value(2,1011,222);
 insert into tbl_rental(rental_id,book_code,member_id)
 value(3,1012,333);
+
+select * from information_schema.table_constraints
+where table_name = 'tbl_member';
+select * from information_schema.table_constraints
+where table_name = 'tbl_book';
+select * from information_schema.table_constraints
+where table_name = 'tbl_rental';
