@@ -12,3 +12,4 @@ alter table tbl_member add constraint PK_tbl_member primary key(member_id) auto_
 >> alter table tbl_member add constraint PK_tbl_member primary key(member_id auto_increment);
 
 alter table tbl_member modify column member_id int auto_increment primary key;
+alter table tbl_member change column member_id member_id int primary key auto_increment;
