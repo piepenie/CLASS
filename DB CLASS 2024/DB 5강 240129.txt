@@ -1,8 +1,4 @@
-fk_테이블네임_테이블네임_
-
-강의장
-pk
-
+--SELECT
 
 -- 00 확인
 use shopdb;
@@ -71,4 +67,86 @@ select * from buytbl where prodName='책' or userId like '%w'; 해당 내용차�
 select * from buytbl where groupName !='null';
 select * from buytbl where groupName <>'null';
 
+-- 04 Select 조건절 - 서브쿼리
 
+select height from usertbl where name='김경호'; -- 김경호의 키
+-- 김경호보다 큰키를 가지는 모든열의 값
+select * from usertbl 
+where height>(select height from usertbl where name='김경호');
+
+-- 성시경보다 나이가 많은(birthyear)가 많은 모든 열의값 출력
+select * from usertbl 
+where birthyear > (select birthyear from usertbl where name='성시경');
+
+-- 지역이 '경남'인 height 보다 큰 행 출력
+-- all(모든 조건을 만족하는)
+select * from usertbl 
+where height > all(select height from usertbl where addr in ('경남') );
+-- any(어느조건이든 하나이상 만족)
+select * from usertbl 
+where height > any(select height from usertbl where addr in ('경남') );
+
+-- 문제 buytbl
+-- 1 amount가 10인 행의 price보다 큰 행을 출력하세요(서브쿼리)
+select * from buytbl where price >(select price from buytbl where amount=10);
+-- 2 userID 가 K로 시작하는 행의 amount 보다 큰 행을 출력하세요(서브쿼리 + ANY)
+	select * from buytbl 
+    where amount > ANY(select amount from buytbl where userid like 'k%');
+    
+-- 3 amount 가 5인 행의 price보다 큰 행을 출력하세요(서브쿼리 + ALL)
+select * from buytbl
+where price>ALL(select price from buytbl where amount=5);
+
+-- 05 Select Order by
+use shopdb;
+select * from usertbl order by mDate asc;
+select * from usertbl order by mDate desc;
+select * from usertbl where birthyear>=1970 order by mdate ;
+select * from usertbl order by height,name;
+
+-- 06 distinct 
+select distinct addr from usertbl;
+
+-- 07 limit
+select * from usertbl;
+select * from usertbl limit 3;
+select * from usertbl limit 2,3;
+
+-- 08 복사(테이블 복사)
+-- 08-01 구조 + 값 복사(PK,FK 복사 x)
+create table tbl_buy_copy(select * from buytbl);
+select * from tbl_buy_copy;
+desc tbl_buy_copy;
+desc buytbl;
+
+create table tbl_buy_copy2(select userid,prodname,amount from buytbl);
+select * from tbl_buy_copy2;
+
+-- 08-02 구조만 복사(값x, PK o, FK x , Index o)
+create table tbl_buy_copy3 like buytbl;
+select * from tbl_buy_copy3;
+desc tbl_buy_copy3;
+
+-- 08-03 데이터만 복사
+insert into tbl_buy_copy3 select * from buytbl where amount>=3 ;
+select * from tbl_buy_copy3;
+
+
+ 
+ -- 문제
+-- 1 userId 순으로 오름차순 정렬
+select * from buytbl order by userid;
+-- 2 price 순으로 내림차순 정렬
+select * from buytbl order by price desc;
+-- 3 amount 순으로 오름차순 prodName으로 내림차순정렬
+select * from buytbl order by amount,prodname desc; 
+-- 4 prodName을 오름차순으로 정렬시 중복 제거
+select distinct prodName from buytbl order by prodname;
+-- 5 userID열의 검색시 중복된 아이디제거하고 select
+select distinct userid from buytbl ;
+-- 6 구매양(amount)가 3이상인 행을 prodName 내림차순으로 정렬
+select * from buytbl where amount >=3 order by prodname desc;
+-- 7 usertbl의 addr 가 서울,경기인 값들을 CUsertbl에 복사
+create table CUsertbl(select * from usertbl where addr in ('서울','경기') );
+
+select * from CUsertbl;
