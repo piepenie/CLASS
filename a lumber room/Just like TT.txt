@@ -253,3 +253,5 @@ select tbl_rental.rental_id,tbl_member.member_name,tbl_book.book_name
 from tbl_rental
 inner join tbl_member on tbl_rental.member_id = tbl_member.member_id
 inner join tbl_book on tbl_rental.book_code = tbl_book.book_code;
+
+과제완용
