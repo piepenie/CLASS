@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/중구.js"></script>
+</head>
+<body>
+
+    <script>
+        // 전체정보확인
+        //console.log(중구맛집);
+
+        // Data 배열만 추출]
+        const 중구맛집_data = 중구맛집.data;
+        console.log(중구맛집_data);
+        console.log("-----------------");
+        // FD_CS(음식카테고리) 가 '한식'만 맛집만 추출
+        const 중구한식식당 = 중구맛집_data.filter((item)=>item.FD_CS == "한식");
+        console.log(중구한식식당);
+
+        //idx가 0인 식당 선택
+        const 장모님국밥 = 중구한식식당[0];
+        const 장모님국밥_MENU = 장모님국밥.MNU;
+        console.log(장모님국밥_MENU);
+        console.log(장모님국밥_MENU.split("<br />"));
+
+        // 모든 배열의 Object 항목중에 상호명(BZ_NM) 과 메뉴(MNU)만 추출
+        const 중구한식식당_new = 중구한식식당.map((item)=>{
+            // item.MNE 를 {메뉴명 : 가격, } 재배치를 하고싶을 수도 있겟쥬?
+            return {BZ_NM:item.BZ_NM, MNU: item.MNU.split("<br />")}
+        });
+        console.log(중구한식식당_new);
+
+        // 고객 주문 리스트 저장
+        const order1 = 
+        [
+            {oid:"1111-1111",menu:menu_map[0].name ,price:menu_map[0].price,amt:1,date:new Date()}, //idx 0
+            {oid:"1111-1112",menu:menu_map[1].name ,price:menu_map[1].price,amt:2,date:new Date()}, //idx 1
+            {oid:"1111-1113",menu:menu_map[2].name ,price:menu_map[2].price,amt:3,date:new Date()}, //idx 2
+        ]
+        console.log("order1",order1);
+
+
+    </script>
+    
+</body>
+</html>
