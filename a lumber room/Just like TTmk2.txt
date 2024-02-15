@@ -74,3 +74,21 @@ update tbl_teacher set t_name='아무개' where t_id=7;
 update tbl_teacher set t_phone='010-777-7777' where t_id=7;
 select * from tbl_teacher;
 select * from tbl_teacher_bak;
+
+
+문제 7
+
+delimiter $$
+create trigger tbl_student_delete_trg
+after delete
+on tbl_student
+for each row 
+begin
+	insert into tbl_teacher_bak values(
+		old.s_id, old.s_name, old.s_phone,update_date,delete_date
+	);
+end $$
+delimiter ;
+
+delete from tbl_student where s_id='20191234';
+select * from tbl_student_bak;
