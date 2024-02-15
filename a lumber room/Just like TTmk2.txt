@@ -8,3 +8,6 @@ as
 select CL.no, CL.lec_duration, CL.lec_time, T.t_name, L.lec_name, C.class_no
 from tbl_current_lecture CL inner join tbl_classroom C on CL.class_no = C.class_no inner join tbl_lecture L on
 L.lec_code = CL.lec_code inner join tbl_teacher T on T.t_id = CL.t_id;
+
+select lec_name,
+sum(if(lec_time='',amount,0))
