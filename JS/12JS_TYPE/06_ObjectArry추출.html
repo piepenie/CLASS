@@ -35,13 +35,21 @@
         console.log(중구한식식당_new);
 
         // 고객 주문 리스트 저장
-        const order1 = 
+        const 춘천옥 = 중구한식식당_new[1];
+        const order1=
         [
-            {oid:"1111-1111",menu:menu_map[0].name ,price:menu_map[0].price,amt:1,date:new Date()}, //idx 0
-            {oid:"1111-1112",menu:menu_map[1].name ,price:menu_map[1].price,amt:2,date:new Date()}, //idx 1
-            {oid:"1111-1113",menu:menu_map[2].name ,price:menu_map[2].price,amt:3,date:new Date()}, //idx 2
+            {oid:"1111-1111",restorant:춘천옥.BZ_NM, menu:"곰탕/양곰탕",price:11000,amonut:3,date:new Date()}, //idx 0
+            {oid:"1111-1112",restorant:춘천옥.BZ_NM, menu:"냉면",price:9000,amonut:4,date:new Date()}, //idx 0
+            {oid:"1111-1113",restorant:춘천옥.BZ_NM, menu:"막국수",price:9000,amonut:2,date:new Date()}, //idx 0
+
         ]
         console.log("order1",order1);
+
+        const resultVal = order1.map((item)=> {return {price:item.price*item.amount}})
+                                .reduce((sum,item)=>{return sum+item.price},0)
+        console.log(resultVal);
+        const pay_result = {pid:"1111-2222",totalPrice:resultVal,pay_data : new Date()}
+        console.log(pay_result);
 
 
     </script>
