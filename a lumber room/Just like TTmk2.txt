@@ -15,3 +15,19 @@ sum(if(lec_time='09:00 - 12:00',no,0)) as '09:00 - 12:00',
 sum(if(lec_time='13:00 - 15:00',no,0)) as '13:00 - 15:00',
 sum(if(lec_time='15:00 - 17:00',no,0)) as '15:00 - 17:00'
 from view_current_lecture group by lec_name with rollup;
+>> 여기서 no 부분을 수정해야됨. 카운트만 나와야하는데 이를 모르겠음.
+
+delimiter $$
+create procedure proc_insert_tbl_registration(in sid varchar(45), in Icode int, Iduration varchar(100))
+begin
+	DECLARE CONTINUE HANDLER FOR 1062 SELECT 'Error, duplicate key occurred';
+INSERT INTO tbl_errlog(no,error_code,error_date,error_msg)
+VALUES(no,error_code,error_date,error_msg);
+end $$
+delimiter ;
+
+>> 이 내용이 즉 에러가 떳을때 에러 내용과 코드를 tbl_errlog 에 저장하는 프로시져를 만드는건데 어디서 잘못된건지 몰?루겟음. 화딱지 나서 돌아벌이는줄
+
+call proc_insert_tbl_registration('20190001',1001,'2023-05-22 - 2023-06-21');
+call proc_insert_tbl_registration('20190001',1001,'2023-05-22 - 2023-06-21');
+call proc_insert_tbl_registration('20190001',7001,'2023-05-22 - 2023-06-21');
