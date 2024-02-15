@@ -19,3 +19,21 @@ class person{
 (1)중복방지
 (2)확장성
 (3)유지보수
+
+생성자 함수()
+객체에 필요한 공간과 객체에 필요한 초기값을 제공하는 함수.
+
+class Person
+{
+
+	Person(){
+	}
+
+}
+
+int main()
+{
+
+	Person 홍길동 = new Person();
+
+}
