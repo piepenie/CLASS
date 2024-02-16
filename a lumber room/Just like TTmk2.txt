@@ -23,17 +23,40 @@ sum(if(lec_time='13:00 - 15:00',1,0)) as '13:00 - 15:00',
 sum(if(lec_time='15:00 - 17:00',1,0)) as '15:00 - 17:00'
 from view_current_lecture group by lec_name with rollup;
 >> 여기서 no 부분을 수정해야됨. 카운트만 나와야하는데 이를 모르겠음.
+>> no 를 1 로 수정해서 있다 없다로 바꿈.
 
 delimiter $$
-create procedure proc_insert_tbl_registration(in sid varchar(45), in Icode int, Iduration varchar(100))
+create procedure proc_insert_tbl_registration(in sid varchar(45), in lcode int, lduration varchar(100))
 begin
-	DECLARE CONTINUE HANDLER FOR 1062 SELECT 'Error, duplicate key occurred';
-INSERT INTO tbl_errlog(no,error_code,error_date,error_msg)
-VALUES(no,error_code,error_date,error_msg);
+   DECLARE error_code VARCHAR(5);
+    DECLARE error_msg VARCHAR(255);
+   DECLARE CONTINUE HANDLER FOR 1062
+    begin
+      show errors;
+        get diagnostics condition 1
+         error_code = mysql_errno,
+            error_msg = message_text;
+            INSERT INTO tbl_errlog VALUES(no,error_code,now(),error_msg);
+   end;
+    
+    DECLARE CONTINUE HANDLER FOR 1452
+   begin
+      show errors;
+        get diagnostics condition 1
+         error_code = mysql_errno,
+            error_msg = message_text;
+            INSERT INTO tbl_errlog VALUES(no,error_code,now(),error_msg);
+            
+   end;
+   begin
+   INSERT INTO tbl_registration values(s_id,lec_code,lec_duration);
+   end;
+    select * from tbl_tbl_registration;
 end $$
 delimiter ;
 
 >> 이 내용이 즉 에러가 떳을때 에러 내용과 코드를 tbl_errlog 에 저장하는 프로시져를 만드는건데 어디서 잘못된건지 몰?루겟음. 화딱지 나서 돌아벌이는줄
+>> 51줄 ~ 53줄 사이 begin end 를 넣었을때 해결됨. 이부분 왜 그런지 알아봐야함.
 
 call proc_insert_tbl_registration('20190001',1001,'2023-05-22 - 2023-06-21');
 call proc_insert_tbl_registration('20190001',1001,'2023-05-22 - 2023-06-21');
