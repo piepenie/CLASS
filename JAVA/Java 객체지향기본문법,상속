@@ -42,3 +42,11 @@ int main()
 이벤트처리!!
 
 NODE CRUD 
+
+class  = 객체라고 생각하고
+mathod = 이 클래스의 동작을 처리하는 함수.
+
+public class HelloWorld{
+ public static void main (String[] args) {
+}
+}
