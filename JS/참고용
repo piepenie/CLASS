@@ -31,6 +31,8 @@ const a = 2 // Uncaught SyntaxError: Identifier 'a' has already been declared
 a = 2 // Uncaught TypeError: Assignment to constant variable.
 console.log(a) // 1
 
+호이스팅(Hosting)
+>> 코드가 실행하기 전 변수선언/함수선언이 해당 스코프의 최상단으로 끌어 올려진 것 같은 현상을 말한다.
 
 함수 : 수를 받아 처리하는 논리적 공간
 재사용성,유지보수
