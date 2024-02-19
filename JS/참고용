@@ -1,3 +1,26 @@
+JS 기본 용어 정리
+
+var
+중복 선언, 할당이 가능하다. 즉, 같은 변수명으로 선언하고 새로운 값을 할당하는 것이 가능하다. 
+이 경우 여러 사람이 작업할 경우에 의도치 않은 값 변경으로 인한 오류를 발생시킬 여지가 있다. 
+이러한 문제를 해결하기 위해 ES6에 추가 된 문법이 let과 const이다.
+
+var a = 1
+var a = 2
+var a = 3
+
+console.log(a) // 3
+
+let
+재선언은 불가능하나, 재할당은 가능하다.
+
+let a = 1
+let a = 2 // Uncaught SyntaxError: Identifier 'a' has already been declared
+console.log(a) // 1
+a = 2
+console.log(a) // 2
+
+
 함수 : 수를 받아 처리하는 논리적 공간
 재사용성,유지보수
 == 메서드
