@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //while 기본
+        
+        // let i =0; //탈출용 변수
+        // while(i<10)
+        // {
+        //     document.write("Hello World<br>");
+        //     i++;
+        // }
+        // document.write("i : " + i);
+        //for 문 기본
+
+        // for(let i=0;i<10;i++){
+        //     document.write("Hello World<br>");
+        // }
+
+        //for in 문(배열용)
+        // let arr = [10,20,30,40,50];
+        // console.log(arr.length);
+        // // for(let i=0;i<arr.length;i++)
+        // //     console.log(arr[i]);
+        // for(let i in arr){
+        //     console.log(arr[i]);
+        // }
+        // //배열 함수 forEach
+        // arr.forEach((item)=>{console.log(item);});
+
+        //for of 문(object용)
+        // const obj = {"name" : "홍길동", "age" : 55, "addr" : "대구"};
+
+        // for(let a in obj){
+        //     console.log(a, obj[a]);
+        // }
+
+        // for (let a of arr){
+        //     console.log(a);
+        // } 
+        // [{},{},{}] 사용해보기
+        const ArrObj = [
+            {"name" : "홍길동", "age" : 55, "addr" : "대구"},
+            {"name" : "서길동", "age" : 66, "addr" : "경남"},
+            {"name" : "남길동", "age" : 77, "addr" : "경북"},
+        ];
+        for(let obj of ArrObj){
+            console.log(obj);
+
+        }
+        // for in : 순서가 있는 자료구조에 적응 o(배열,리스트,스택,큐,덱.... )
+        //        : 순서가 없는 자료구조에 적용 o(Map(object 형 데이터 set),set)
+        // for of : 순서가 있는 자료구조에만 적용
+
+
+    </script>
+</body>
+</html>
