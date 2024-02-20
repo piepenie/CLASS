@@ -1,0 +1,78 @@
+백준 문풀용
+
+A1) Hello World!
+
+!표가 빠져서 1회 오답처리됨.
+public class Main{
+    public static void main(String[] args){
+        System.out.println("Hello World!");
+    }
+}
+
+A2) A+B <!-- 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성 -->
+1) Import 를 알아야됨.
+2) Scanner 를 알아야됨.
+
+import 란? 외부에 있는 패키지를 사용하기위해 사용하는 문법.
+Scanner란 사용자로 부터 입력을 받을 수 있도록 도와줌.
+사용법 import java.util.Scanner;
+
+Scanner scanner = new Scanner(System.in);
+
+>>
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+        
+        System.out.println(A+B);
+    }
+}
+
+A3) A-B <!-- 두 정수 A와 B를 입력받은 다음, A-B를 출력하는 프로그램을 작성 -->
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+        
+        System.out.println(A-B);
+    }
+}
+
+A4) A*B <!-- 두 정수 A와 B를 입력받은 다음, A*B를 출력하는 프로그램을 작성 -->
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+        
+        System.out.println(A*B);
+    }
+}
+
+A5) A/B <!-- 두 정수 A와 B를 입력받은 다음, A/B를 출력하는 프로그램을 작성 -->
+>> 왜 틀린건지 알아봐야됨.
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+        
+        System.out.println(A*B);
+    }
+}
+
