@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 콜백함수(call back) 
+        // 함수를 호출하는 시점이 바뀌어진 형태의 함수
+        // 기본방식 : 사용자(개발자)가 함수를 직접정의 -> 정의된 함수를 호출(Call)하여 결과를 반환받는 방식
+        // CallBack : 콜백함수의 인자로 수행로직(()=>{},function(){})을 전달하여 콜백함수로부터 처리된 결과를
+        // 반환받는 형태
+
+        // function func(n1,n2){
+        //     const result = n1+n2;
+        //     return result;
+        // }
+        // const r = func(10,20); //Call
+        // console.log(r);
+
+        // function callBackFunc(n1,n2,func){
+        //     const result = func(n1,n2);
+        //     return result;
+        // }
+        // function sum(n1,n2){return n1+n2};
+        // function sub(n1,n2){return n1-n2};
+        // function mul(n1,n2){return n1*n2};
+        // function div(n1,n2){return n1/n2};
+
+        // const r1 = callBackFunc(20,4,sum);
+        // console.log(r1);
+        // const r2 = callBackFunc(20,4,sub);
+        // console.log(r2);
+        // const r3 = callBackFunc(20,4,mul);
+        // console.log(r3);
+        // const r4 = callBackFunc(20,4,div);
+        // console.log(r4);
+
+        const data = [11,20,41,15,7,1,51];
+        function simForEach(data,func){
+                const val = data.sort((a,b)=>{return b-a;})
+                    .reduce((sum,item) => {return sum+item},0)
+                console.log(data);
+                console.log(val);
+                data.push(val);
+                for(idx in data){
+                    func(data[idx]);
+                }
+        }
+
+        simForEach(data,(item) => {
+            console.log(item);
+        });
+
+        
+
+    </script>
+</body>
+</html>
