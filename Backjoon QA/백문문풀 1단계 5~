@@ -1,0 +1,21 @@
+>> 21일 아파서 쉼.
+
+>> 2월 22일 5번 문제 오답 풀이부터 시작.
+
+문제조건에 상대오차를 신경쓰라는 말이있음.
+
+A5) A/B <!-- 두 정수 A와 B를 입력받은 다음, A/B를 출력하는 프로그램을 작성 -->
+>> 왜 틀린건지 알아봐야됨.
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+        
+        System.out.println(A*B);
+    }
+}
+
