@@ -109,5 +109,22 @@ public class Main{
     }
 }
 
-A10)
+A10)2558) 곱셈
+>> 생각보다 시간이 엄청 걸린 문제. A 값은 그대로 놔두고 B 값을 각각 3 / 8/ 5 로 분해시켜서 각 A에 곱을 해주면됨
+>> 솔직히 몫 나눔에서 걸려서 이부분을 내일 추가적으로 다시 좀 봐야할 것 같다. 
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+        
+        System.out.println(A*(B % 10));
+        System.out.println(A*((B/10)%10));
+        System.out.println(A*(B/100));
+        System.out.println(A*B);
+        
+    }
+}
 
