@@ -55,9 +55,9 @@ public class Main{
 }
 
 A7)10926) ??!
+>> 주어지는 값이 문자열인 것을 확인하고 추가적으로 string 의 값 뒤에는 변수타입을 line 을 붙여줘야함.
 
 import java.util.Scanner;
->> 주어지는 값이 문자열인 것을 확인하고 추가적으로 string 의 값 뒤에는 변수타입을 line 을 붙여줘야함.
 
 public class Main{
     public static void main(String[] args){
@@ -70,4 +70,44 @@ public class Main{
     }
 }
 
-A8)
+A8)18108) 1998년생인 내가 태국에서는 2541년생?!
+>> 주어진 값이 불교년도인데 이를 서기로 변환시켜 주기위해선 불교년도 - 서기연도의 차이값만큼을 불교년도에서 빼주면 됨. 
+고로 2541 - 1998 => 543 년 만큼의 차이값을 입력값에서 빼주면됨!
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int year = scanner.nextInt();
+        
+        int CWJ = 2541 - 1998;
+        
+        System.out.println(year - CWJ);
+        
+
+    }
+}
+
+A9)10430) 나머지
+>> 2번째 답이 한번 오답이낫다. 괄호를 확인 못해서 실수함. 
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+        int C = scanner.nextInt();
+        
+        System.out.println((A+B)%C);
+        System.out.println(((A%C)+(B%C))%C);
+        System.out.println((A*B)%C);
+        System.out.println(((A%C)*(B%C))%C);
+        
+    }
+}
+
+A10)
+
