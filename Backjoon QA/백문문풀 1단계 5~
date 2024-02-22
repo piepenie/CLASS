@@ -57,11 +57,17 @@ public class Main{
 A7)10926) ??!
 
 import java.util.Scanner;
+>> 주어지는 값이 문자열인 것을 확인하고 추가적으로 string 의 값 뒤에는 변수타입을 line 을 붙여줘야함.
 
 public class Main{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
+        String Id = scanner.nextLine();
 
+        System.out.println(Id+"??!");
+        
 
     }
 }
+
+A8)
