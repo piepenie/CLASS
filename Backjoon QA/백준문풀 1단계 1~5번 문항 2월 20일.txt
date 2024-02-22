@@ -75,4 +75,4 @@ public class Main{
         System.out.println(A*B);
     }
 }
->> 2월 20일 5문 5문제 품 >> 5번째에서 살짝 막혔음.
+
