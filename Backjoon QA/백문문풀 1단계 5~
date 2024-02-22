@@ -3,8 +3,10 @@
 >> 2월 22일 5번 문제 오답 풀이부터 시작.
 
 문제조건에 상대오차를 신경쓰라는 말이있음.
+10^-9 라는 조건을 참고했을때 이 조건을 왜 걸었는지에 대해서 생각함.
 
-A5) A/B <!-- 두 정수 A와 B를 입력받은 다음, A/B를 출력하는 프로그램을 작성 -->
+
+A5)1008) A/B <!-- 두 정수 A와 B를 입력받은 다음, A/B를 출력하는 프로그램을 작성 -->
 >> 왜 틀린건지 알아봐야됨.
 
 import java.util.Scanner;
@@ -15,9 +17,10 @@ public class Main{
         int A = scanner.nextInt();
         int B = scanner.nextInt();
         
-        System.out.println(A*B);
+        System.out.println(A/B);
     }
 }
+>> 자료형을 수정해야함. 
 
 import java.util.Scanner;
 
@@ -27,6 +30,38 @@ public class Main{
         double A = scanner.nextDouble();
         double B = scanner.nextDouble();
         
+        System.out.println(A/B);
+    }
+}
+자료형 값을 실수로 수정해야하기때문에 int >> double 로 변환이 필요했다! 확인.
+
+A6)10869) 사칙연산
+>> 예제 출력을 확인하고 7/3이 2로 선언한것을 통해서 정수(int)로 선언해야함!
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+
+        System.out.println(A+B);
+        System.out.println(A-B);
         System.out.println(A*B);
+        System.out.println(A/B);
+        System.out.println(A%B);
+    }
+}
+
+A7)10926) ??!
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+
+
     }
 }
