@@ -14,4 +14,31 @@ public class Main{
 }
 
 A12)10171) 고앵이
->>
+>> 처음에 \ 만 썻을때 자꾸 컴파일 에러가 뜨길래 뭐?지 이랬는데, 이스케이프 문자라는 걸 알아야 풀 수 있는 문제라는 것을 확인했다.
+\\ 가 \ 로 출력되는 것을 알아야함.
+
+public class Main {
+
+	public static void main(String[] args) {
+        System.out.println("\\    /\\");
+        System.out.println(" )  ( \')");
+        System.out.println("(  /  )");
+        System.out.println(" \\(__)|");
+	}
+
+}
+
+A13)10172) 몽몽이
+>> 13번 문제는 12번 문제와 동일해서 생각보다 쉽게 풀었음.
+
+public class Main {
+
+	public static void main(String[] args) {
+        System.out.println("|\\_/|");
+        System.out.println("|q p|   /}");
+        System.out.println("( 0 )\"\"\"\\");
+        System.out.println("|\"^\"`    |");
+        System.out.println("||_/=\\\\__|");
+	}
+
+}
