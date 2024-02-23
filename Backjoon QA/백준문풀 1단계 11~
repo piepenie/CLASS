@@ -1,1 +1,17 @@
-ㅇㄹㄴㄹ
+A11)11382) 꼬마 정민.
+>> 처음에 int 로 했다가 컴파일 에러가 뜨길래 뭐?지 이랬다가 자료형을 long으로 바꿔야한다는 걸 파악.
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        long A = scanner.nextLong();
+        long B = scanner.nextLong();
+        long C = scanner.nextLong();
+        
+        System.out.println(A+B+C);
+    }
+}
+
+A12)10171) 고앵이
+>>
