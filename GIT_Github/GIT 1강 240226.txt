@@ -27,3 +27,24 @@ git commit -m "V0.0 aaa.txt Conflict Solved... ."
  git merge --continue
 [dev edc51fb] Merge branch 'feature' into dev
 :wq 로 나가주면됨.
+
+Local Repository >> Remote Repository
+
+Local Repository >> Remote Repository
+
+처음에 리포짓 만들때 
+리드미 파일 만들면 기본적으로 메인 브랜치가 생성되서
+올릴수가없으므로 생성하지말것!
+
+깃으로 올리기
+
+git branch -M main // 깃 브랜치 main 으로 이름 변경
+git push origin // 
+>> 이거 뭔지 알아봐야됨
+git remote -v
+
+깃에서 받아오기
+
+폴더위에 
+git clone https://github.com/piepenie/TESTREPO01.git << 경로
+넣으면 복사되서 해당 폴더에 깃 폴더 데려옴
