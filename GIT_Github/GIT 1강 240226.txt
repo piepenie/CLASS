@@ -1,17 +1,26 @@
 git 명령어 
 
-git init // 깃 시작
+git init // .git 하위 디렉토리 생성 >> 폴더를 만든 후 그 안에서 명령 실행
+
+git clone <깃 주소> // 깃 소스 코드 다운로드/복제
+
 git status // 깃 브랜치 위치 확인
-git add * // 깃 파일 추가
+
+git add * // 깃 파일 추가 여기서 *는 와일드 카드라고 부른다.
+
 git log --oneline // 깃 파일 로그 확인 한줄로
 git reflog // 깃 명령어 이동했던 로그 확인
 git reset --soft 위치로그 // 깃 위치로 복구
-git branch // branch 현재 위치 확인
-git branch dev // dev 브랜치 생성
-git switch master // master 브랜치로 이동
-git commit -m "V0.0 by 브랜치 위치" // 파일 기록 저장?
->> 이부분 다시 commit 정의
+
+git branch // branch 현재 위치 확인 + 브랜치 목록
+ex)git branch dev // dev 브랜치 생성
+
+git switch master // master 브랜치로 이동 (switch 로 이동함)
+
+git commit -m "V0.0 by 브랜치 위치" // 커밋 생성 및 -m "커밋 메시지"
+
 git merge dev // dev와 브랜치 병합
+
 git merge --continue // 깃 병합 계속
 
 git commit -m "V0.0 aaa.txt added by dev"
@@ -39,9 +48,8 @@ Local Repository >> Remote Repository
 깃으로 올리기
 
 git branch -M main // 깃 브랜치 main 으로 이름 변경
-git push origin // 
->> 이거 뭔지 알아봐야됨
-git remote -v
+git push origin // 만든 브랜치를 원격 서버에 전송.
+git remote -v // 원격 저장소를 관리하는 명령어 >> 설정된 원격 저장소 보기.
 
 깃에서 받아오기
 
