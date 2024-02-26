@@ -24,4 +24,6 @@ git commit -m "V0.0 aaa.txt Conflict Solved... ."
 
 >> git merge 하고나서 메세지 뜨면
 
-:wq 로 나가주면됨. >> 깃허브가 리눅스 기반 시스템이기때문에 :wq가 다시 터미널로 이동하는거
+ git merge --continue
+[dev edc51fb] Merge branch 'feature' into dev
+:wq 로 나가주면됨.
