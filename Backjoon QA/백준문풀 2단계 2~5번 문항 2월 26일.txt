@@ -1,3 +1,7 @@
+A2)9498) 시험 성적
+>> if-else 문을 이용해서 푸는 문제. 괄호에 주의해야했다.
+그런데 왜 괄호를 두개해도 처리가 안되는지에 대해선 조금 의문.
+
 import java.util.Scanner;
 
 public class Main {
@@ -16,8 +20,11 @@ public class Main {
 		} else if(a>59) {
 			System.out.println("D");
 		} 
-        else {
+       		  else {
 			System.out.println("F");
-        }
+        	}
 	}
 }
+
+
+A3)
