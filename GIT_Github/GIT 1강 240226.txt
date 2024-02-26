@@ -1,0 +1,18 @@
+git 명령어 
+
+git init // 깃 시작
+git status // 깃 브랜치 위치 확인
+git add * // 깃 파일 추가
+git log --oneline // 깃 파일 로그 확인
+git reflog // 
+git reset --soft 위치로그 // 깃 위치로 복구
+git branch dev // dev 브랜치 생성
+git switch master // master 브랜치로 이동
+git coomit -m "V0.0 by 브랜치 위치"
+git merge dev // dev와 브랜치 병합
+
+
+
+>> git merge 하고나서 메세지 뜨면
+ 
+:wq 로 나가주면됨.
