@@ -1,0 +1,84 @@
+A5)2884) 알람 시계★★★
+>> 솔직하게 말해서 20분 고민해도 안풀려서 답지를 참고해서 봣다.
+오랜만에 느끼는 벽에 머리가 터질뻔 한 문제.
+
+푸는 요령을 읽어봐도 풀이를 잘 이해하지 못한 문제.
+다시 한번 주말에 풀도록 해봐야겟다 싶어서 특별히 문풀에 제목에 
+별을 달아놓겠다
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int h = scanner.nextInt();
+		int m = scanner.nextInt();
+		
+		if(m < 45 ) {
+		   h--;
+		   m = 60 - (45 - m); 
+		   if(h < 0) { h = 23; 
+           }
+		   System.out.println(h + " " + m);
+        } else {
+            m = m - 45;
+            System.out.println(h + " " + m);
+        }
+    }
+}
+
+A6)2525) 오븐 시계★★★
+>> 벽느낀 2번째 문제 첫번째도 열받아 죽는줄 알았는데 여긴 해도 더했다.
+심지어 제일 먼저 찾아본 풀이는 조건문을 쓰지않아서 조건문으로 풀려하는
+의도에서 벗어남. 고로 다른 풀이를 참고해야했다. 
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int h = scanner.nextInt();
+		int m = scanner.nextInt();
+        int work = scanner.nextInt();
+        
+        int min = (h*60)+m+work;
+        
+        h = (min/60)%24;
+        m = min%60;
+        
+        System.out.printf("%s %s",h, m);
+    }
+}
+
+해당 풀이 역시 정답은 맞으나, 
+조건문을 전제로 낸 문제기 때문에, 조건문을 이용한 풀이를 찾아보았다.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int h = scanner.nextInt();
+        int m = scanner.nextInt();
+        int work = scanner.nextInt();
+        
+        if((m+work)<60) {
+            System.out.printf("%s %s", h, m+work);
+        } else {
+            int i = (m+work) / 60;
+            int l = (m+work) % 60;
+            if((h+i) >= 24) {
+                System.out.printf("%s %s", (h+i)%24, l);
+            } else {
+                System.out.printf("%s %s", h+i, l);
+            }
+        }
+        
+    }
+}
+
+쉬는 날 난리가 날 예정이다. 풀이를 보고 머리가 아픈건 또... .
