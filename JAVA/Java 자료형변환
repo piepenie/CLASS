@@ -25,12 +25,12 @@ Double.parseDouble() : 문자열을 실수 double로 변환
 --------------------------------------------------------
 1. 자동 타입 변환에 대한 내용입니다 컴파일 에러가 발생하는 것은 무엇입니까
 정답. 3) 왼쪽값이 short 인데 오른쪽 값이 2byte >> 컴파일 에러 발생.
-수정하려면 int 여야함.
+수정하려면 short shortValue 를 int shortValue 로 변경하면됨.
 
 [예시]
 ----------------------------
 byte byteValue = 10;
-char charValute = 'A';
+char charValue = 'A';
 ----------------------------
 1) int intValue = byteValue;
 2) int intValue = charValue;
@@ -39,6 +39,8 @@ char charValute = 'A';
 
 
 2. 강제 타입 변환에 대한 내용입니다. 컴파일 에러가 발생하는 것은 무엇입니까
+정답. 4) str은 string 문자열 자료형이라 자료형이 맞지않음.
+strValue 대신 charValue를 사용해야함.
 
 [예시]
 ----------------------------
@@ -54,6 +56,8 @@ String strValue = "A";
 
 
 3. 연산식에서의 타입 변환에 대한 내용입니다. 컴파일 에러가 발생하는 것은 무엇입니까?
+정답. 
+
 [예시]
 ----------------------------
 byte byteValue = 10;
