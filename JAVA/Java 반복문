@@ -34,8 +34,7 @@ n!=1×2×3×⋯⋯×(n−1)×n 을 뜻함.
 import java.util.Scanner;
 
     public class Main {
-        public static void main(String[] args)
-        {
+        public static void main(String[] args){
             Scanner scanner = new Scanner(System.in);
             int num;
             int fact = 1;
@@ -54,3 +53,43 @@ import java.util.Scanner;
 
 2) while 문.
 
+public class Main {
+
+	public static void main(String[] args) {
+		int i = 0;  // 최초변수 
+		while(i<10) { // 조건	
+			System.out.println("While");
+			i++; // i++
+		} 
+
+	}
+
+} // 결과 : 콘솔에 while 이 10번 출력됨.
+※주의 i < 10 이니까 9번 아냐? 라고 착각할 수 있지만, 우리는 i 값을 0 으로 시작했다.
+즉 0 도 포함한 상태이므로 0~9 총 10번이 출력됨을 알아야한다!
+
+Q1)N,M을 입력 받아서 N~M까지의 합을 구하기. (N < M)
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n=sc.nextInt();
+		int m=sc.nextInt();
+		
+		if(n>m){
+			int tmp=n;
+			n=m;
+			m=tmp;
+			}	
+			int i=n; //초기값
+			int sum=0;
+			while(i<=m){
+				sum+=i;
+				i++;
+				}
+				System.out.printf("%d 부터 %d까지의 합 : %d\n",n,m,sum);
+	}
+
+} // 결과 n ~ m 까지의 합이 출력됨. ex) 1~10 = 55.
