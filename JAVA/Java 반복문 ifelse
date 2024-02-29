@@ -1,3 +1,4 @@
+Cf)
 Buffer
 >> 임시 저장 공간.
 A와 B가 입출력을 수행하는데에 있어서
@@ -5,8 +6,12 @@ A와 B가 입출력을 수행하는데에 있어서
 
 엔터도 문자
 >> \n 로 표현
- 
 
-import java.util.Scanner;
+Scanner 란, 콘솔에서 키보드 입력값을 받을 때 가장 많이 사용하는 클래스.
 
-		Scanner sc = new Scanner(System.in);
+
+import java.util.Scanner; // Scanner 클래스 호출
+Scanner sc = new Scanner(System.in); // Scanner 객체 생성
+int a = sc.nextInt(); // int 입력
+
+s
