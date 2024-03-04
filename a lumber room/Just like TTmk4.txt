@@ -1,1 +1,5 @@
 별찍기
+C00While.java
+에 위치함 
+
+https://github.com/EM-ORG-2023-12-27/05_JAVA_OLD/blob/main/01_SrcFile/Ch07/C00While.java
