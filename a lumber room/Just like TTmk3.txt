@@ -39,24 +39,31 @@ public class Test01 {
 	public static void main(String[] args) {
 		Seller seller01 = new Seller(100000,100,1000); // 각 class 에서 지정했던 대로, 판매자의 보유자산,판매자의 보유사과개수, 사과 각 가격을 나타냄.
 		
-		Buyer buyer01 = new Buyer(10000,0); 
-		Buyer buyer02 = new Buyer(20000,0);
-		Buyer buyer03 = new Buyer(30000,0);
+		Buyer buyer01 = new Buyer(10000,0); // 구매자01의 보유 금액을 지정해줌
+		Buyer buyer02 = new Buyer(20000,0); // 구매자02의 보유 금액을 지정해줌
+		Buyer buyer03 = new Buyer(30000,0); // 구매자03의 보유 금액을 지정해줌
 		
 
 		
-		buyer01.pay(seller01,2000);
-		buyer02.pay(seller01,5000);
-		buyer03.pay(seller01,3000);
-		
-		System.out.println("---판매자 정보---");
-		System.out.printf("%d,%d\n",seller01.myMoney,seller01.appleCnt );
+		buyer01.pay(seller01,2000); // 구매자01의 결제 메서드를 호출, 2000원을 지급함
+		buyer02.pay(seller01,5000); // 구매자02의 결제 메서드를 호출, 5000원을 지급함
+		buyer03.pay(seller01,3000); // 구매자03의 결제 메서드를 호출, 3000원을 지급함
+		 
+		System.out.println("---판매자 정보---"); // 제시한 출력 대로 출력하기 위해서 println 을 이용해 한줄 씩 출력하도록 해보았다.
+		System.out.println("보유 금액 : "+seller01.myMoney + "원"); // 구매자01~03 이 pay 메서드를 거친 이후 보유 금액이 출력된다. 
+		System.out.println("사과 개수 : "+seller01.appleCnt + "개"); // 구매자01~03 이 pay 메서드를 거친 이후 남은 사과 개수가 출력된다. 
+		System.out.println("개당 가격 : "+seller01.price + "원"); // 구매자01~03 이 내야할 사과의 개당 가격이 출력된다. 
+	
 		System.out.println("---구매자01 정보---");
-		System.out.printf("%d,%d\n",buyer01.myMoney,buyer01.appleCnt );
+		System.out.println("보유 금액 : "+buyer01.myMoney + "원"); // 구매자01 이 pay 메서드를 거친 이후 보유 금액을 출력함
+		System.out.println("사과 개수 : "+buyer01.appleCnt + "개"); // 구매자01 이 pay 메서드를 거친 이후 보유한 사과 개수를 출력함
 		System.out.println("---구매자02 정보---");
-		System.out.printf("%d,%d\n",buyer02.myMoney,buyer02.appleCnt );
+		System.out.println("보유 금액 : "+buyer02.myMoney + "원"); // 구매자02 이 pay 메서드를 거친 이후 보유 금액을 출력함
+		System.out.println("사과 개수 : "+buyer02.appleCnt + "개"); // 구매자02 이 pay 메서드를 거친 이후 보유한 사과 개수를 출력함
 		System.out.println("---구매자03 정보---");
-		System.out.printf("%d,%d\n",buyer03.myMoney,buyer03.appleCnt );
+		System.out.println("보유 금액 : "+buyer03.myMoney + "원"); // 구매자03 이 pay 메서드를 거친 이후 보유 금액을 출력함
+		System.out.println("사과 개수 : "+buyer03.appleCnt + "개"); // 구매자03 이 pay 메서드를 거친 이후 보유한 사과 개수를 출력함
+	
 		
 		
 	}
