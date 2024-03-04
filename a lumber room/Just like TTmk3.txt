@@ -1,11 +1,11 @@
-package Ch99;
+package TEST;
 
 class Buyer{ // 구매자 클래스
 	int myMoney; // 구매자(돈) 변수 지정
 	int appleCnt; // 구매자가 사서 소유할 사과의 갯수
-	Buyer(int money,int cnt){ 
-		this.myMoney = money; // 전체 돈 자체는 동일함 this.myMoney = money 로 
-		this.appleCnt = cnt; // 전체 사과 개수 동일함 this.appleCnt = cnt 로
+	Buyer(int money,int cnt){ // 구매자가 가진 금액, 구매자가 산 사과 갯수를 나타냄.
+		this.myMoney = money; // 구매자의 보유 금액을 나타냄
+		this.appleCnt = cnt; // 구매자의 보유한 사과 개수를 나타냄
 	}
 	public void pay(Seller seller, int money) { // 구매자의 pay 메서드를 뜻함
 		myMoney-=money; 					// 내 돈에서 돈만큼 차감
@@ -18,35 +18,36 @@ class Buyer{ // 구매자 클래스
 class Seller{ // 판매자 클래스
 	int myMoney; // 판매자(돈) 변수 지정
 	int appleCnt; // 판매자가 판매할 사과의 갯수
-	public int price; // 
-	Seller(int money,int cnt,int price){
-		this.myMoney = money;
-		this.appleCnt = cnt;
-		this.price = price;
+	public int price; // price 를 다른 클래스에서도 접근 할 수 있게 하기위해서 public을 붙임.
+	Seller(int money,int cnt,int price){ // 판매자의 보유 금액, 사과 개수, 사과 가격을 나타냄.
+		this.myMoney = money;	// 판매자의 보유 금액을 나타냄
+		this.appleCnt = cnt; // 판매자의 보유한 사과 개수를 나타냄
+		this.price = price; // 판매자가 제시할 사과 가격을 나타냄.
 	}
-	public int receive(int money) {
-		myMoney+= money;			
-		int cnt = money/price;
-		appleCnt-= cnt;			
-		return cnt;				
+	public int receive(int money) { // 판매자의 receive 메서드를 뜻함
+		myMoney+= money;			// 내 돈에서 돈 만큼 가산
+		int cnt = money/price;		// 사과의 개수는 돈 / 사과 각각 가격으로 나타낼 수 있음. ex) 사과price 가 1000원 이라고하면, 2000원을 제시햇을때 사과 갯수는 2개.
+		appleCnt-= cnt;				// 판매자의 보유 사과 개수만큼 cnt 가 빠짐.
+		return cnt;					// 판매자가 판매한 뒤의 사과 개수를 나타내줌.
 	};
 	
 }
 
-public class test {
+
+public class Test01 {
 	
 	public static void main(String[] args) {
-		Seller seller01 = new Seller(100000,100,1000);
+		Seller seller01 = new Seller(100000,100,1000); // 각 class 에서 지정했던 대로, 판매자의 보유자산,판매자의 보유사과개수, 사과 각 가격을 나타냄.
 		
-		Buyer buyer01 = new Buyer(10000,0);
+		Buyer buyer01 = new Buyer(10000,0); 
 		Buyer buyer02 = new Buyer(20000,0);
 		Buyer buyer03 = new Buyer(30000,0);
 		
 
 		
 		buyer01.pay(seller01,2000);
-		buyer01.pay(seller01,5000);
-		buyer01.pay(seller01,3000);
+		buyer02.pay(seller01,5000);
+		buyer03.pay(seller01,3000);
 		
 		System.out.println("---판매자 정보---");
 		System.out.printf("%d,%d\n",seller01.myMoney,seller01.appleCnt );
