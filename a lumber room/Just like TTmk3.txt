@@ -1,0 +1,63 @@
+package Ch99;
+
+class Buyer{ // 구매자 클래스
+	int myMoney; // 구매자(돈) 변수 지정
+	int appleCnt; // 구매자가 사서 소유할 사과의 갯수
+	Buyer(int money,int cnt){ 
+		this.myMoney = money; // 전체 돈 자체는 동일함 this.myMoney = money 로 
+		this.appleCnt = cnt; // 전체 사과 개수 동일함 this.appleCnt = cnt 로
+	}
+	public void pay(Seller seller, int money) { // 구매자의 pay 메서드를 뜻함
+		myMoney-=money; 					// 내 돈에서 돈만큼 차감
+		int cnt=seller.receive(money);		// 판매자의 receive 메서드를 이용해서 돈을 전달
+		appleCnt+=cnt;						// 사과개수를 받아 appleCnt 누적		
+	}
+
+	
+}
+class Seller{ // 판매자 클래스
+	int myMoney; // 판매자(돈) 변수 지정
+	int appleCnt; // 판매자가 판매할 사과의 갯수
+	public int price; // 
+	Seller(int money,int cnt,int price){
+		this.myMoney = money;
+		this.appleCnt = cnt;
+		this.price = price;
+	}
+	public int receive(int money) {
+		myMoney+= money;			
+		int cnt = money/price;
+		appleCnt-= cnt;			
+		return cnt;				
+	};
+	
+}
+
+public class test {
+	
+	public static void main(String[] args) {
+		Seller seller01 = new Seller(100000,100,1000);
+		
+		Buyer buyer01 = new Buyer(10000,0);
+		Buyer buyer02 = new Buyer(20000,0);
+		Buyer buyer03 = new Buyer(30000,0);
+		
+
+		
+		buyer01.pay(seller01,2000);
+		buyer01.pay(seller01,5000);
+		buyer01.pay(seller01,3000);
+		
+		System.out.println("---판매자 정보---");
+		System.out.printf("%d,%d\n",seller01.myMoney,seller01.appleCnt );
+		System.out.println("---구매자01 정보---");
+		System.out.printf("%d,%d\n",buyer01.myMoney,buyer01.appleCnt );
+		System.out.println("---구매자02 정보---");
+		System.out.printf("%d,%d\n",buyer02.myMoney,buyer02.appleCnt );
+		System.out.println("---구매자03 정보---");
+		System.out.printf("%d,%d\n",buyer03.myMoney,buyer03.appleCnt );
+		
+		
+	}
+
+}
