@@ -9,4 +9,4 @@ Exception은 예외라는 뜻입니다. 프로그래밍에서 예외는 error라
 런타임 오류의 경우 설계가 잘못되어 발생하는 경우가 많습니다.
  
 그리고 자바에서는 이러한 Exception을 처리하기 위해 java.lang.Exception이라는 최상위 클래스를 제공합니다.
-출처: https://day0404.tistory.com/47 [Dev Day:티스토리]
+
