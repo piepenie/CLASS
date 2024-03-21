@@ -1,0 +1,76 @@
+class Student{ // 클래스 정의. 
+   public String userid;
+   public String password;
+   public String name;
+
+   public Student(String userid, String password, String name) { 
+// 생성자는 Student >> 얘는 매개변수가 userid password name 임. 
+      super();  // 부모 클래스에서 호출을 위해 사용. 그런데 멤버변수와 매개변수가 동일하므로 이를 구분하기위해 this를 사용.
+      this.userid = userid; 
+      this.password = password;
+      this.name = name;
+   }
+
+}
+public class C06TxMain{
+   public static Student Insert(Student student) throws Exception{ // 여기서 매개변수는 아... Student student 인가...? 헷갈림.
+      student.userid = "bbb"; 
+      student.password="4567";
+      student.name="남길동"
+      return student;
+   }
+   public static void main(String[] args) throws Exception{
+	Student returnedStd =  Insert(new Student("aaa","1234","홍길동"));
+
+//		   try {
+//	            Student returnedStd = Insert(new Student("aaa", "1234", "홍길동"));
+//	            System.out.println("userid: " + returnedStd.userid);
+//	            System.out.println("password: " + returnedStd.password);
+//	            System.out.println("name: " + returnedStd.name);
+//	        } catch (Exception e) {
+//	            e.printStackTrace();
+//	        	}
+	}
+}
+
+
+super 자신이 상속 받은 부모 클래스에 대한 레퍼 변수로, 부모 클래스의 멤버에 접근할때 사용
+super() 는 자식 클래스의 생성자에서 부모 클래스의 생성자를 호출하기 위해서 사용
+생성자 코드안에서 사용 될 때 다른코드에 앞서 첫줄에 사용되어야함
+
+static 영역 >> Method 영역
+class 가 로딩될 때 생성 
+class 의 정보, static 변수(클래스변수) 생성자(Constructor) 메써드(Method) 저장
+JVM이 종료 시(프로그램이 종료 시) 메모리에서 해제 된다. 즉 프로그램이 종료되기 전까진 메모리 상에 존재하게된다. 
+그렇기 때문에 어디서든 접근이 가능한 것이며, 무분별 하게 사용될 경우 메모리 부족 현상이 발생할 수 있다.
+
+생성자란? 자바에서는 객체 생성과 동시에 인스턴스 변수를 원하는 값으로 초기화 할 수 있는 
+생성자라는 메서드(Method)를 제공 >> 자바에서 생성자의 이름은 해당 클래스의 이름과 같아야함
+고로 std class의 생성자의 이름은 std가 됨?  
+
+인스턴스란? 클래스를 통해 생선된 객체를 인스턴스라 칭함
+보통 객체와 인스턴스는 큰 차이를 보이지않지만, 
+객체는 모든 인스턴스를 뜻하고
+인스턴스는 해당 객체가 어떤 클래스로부터 생성되었는지를 강조. 한다.
+
+매개변수란? 파라메터 라고 부르며  (지역변수)
+매개변수는  메소드, 생성자를 선언할 때 어떤 형태로 데이터값이 들어올지 정의해줌.
+
+멤버변수란? 필드
+클래스변수, 인스턴스변수를 통틀어 칭함
+
+this는 어떤 의미? 자신의 객체에 접근할 때 사용됨.
+주로 멤버변수와 매개변수의 이름이 동일,할때 이를 구분하기위해 사용됨.
+
+Heap 영역 >> 인스턴스 생성시 사용되는 메모리영역
+참조형 데이터 객체의 실제 데이터가 저장되는 공간. 스택 영역에서 실제 데이터가 존재하는 Heap영역의 참조값을 가지고있음
+new 키워드로 인스턴스 생성 할때, Heap 영역에는 생성된 객체가 저장, 스택 영역에서 생성된 객체에 대한 주소값(Reference)이 저장
+
+new 를 사용해 객체를 생성할 때 저장.
+참조형 데이터 타입이 저장됨.
+Heap 영역의 데이터들을 가르키는 주소는 스택에 적재되고, 주소값을 통해서만 heap영역의 데이터들에 접근 핸들링 가능
+호출이 종료되도 삭제되지않기 때문에 GC에 의해 메모리에서 해제
+쓰레드가 몇개 존재하든, 단 하나의 영역만 존재함.
+
+Stack 영역
+기본자료형, 지역변수, 매개변수가 저장되는 메모리
