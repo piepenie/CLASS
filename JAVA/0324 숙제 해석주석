@@ -76,3 +76,7 @@ Heap 영역의 데이터들을 가르키는 주소는 스택에 적재되고, �
 
 Stack 영역
 기본자료형, 지역변수, 매개변수가 저장되는 메모리
+
+참고 주소 링크 
+https://atomicliquors.tistory.com/7
+https://javacpro.tistory.com/11
