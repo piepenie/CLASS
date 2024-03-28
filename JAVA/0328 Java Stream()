@@ -8,7 +8,13 @@ import java.util.function.Function;
 //03 func3완성 - List<String>에서 각 문자열의 첫 글자를 추출하여 대문자로 변환하여 리턴
 public class C04Ex {
 	
-	public static Function<List<String>,Integer> func1 = null;
+public static Function<List<String>,Integer> func1 = 
+			list -> list.stream() // 람다를 활용할 수 있는 기술. 
+						.filter(el->el.length()>5) // 주어진 조건이 아니면 걸러냄. 
+						.map(el->1) // 원하는 필드만 뽑아내거나 특정형태로 변환해야 할 때 사용
+						.reduce((a,b)->a+b) // 스트림 요소를 처리해서 값을 도출.
+						.get(); // 값을 획득.
+			
 	public static Function<List<Integer>,Integer> func2 = null;
 	public static Function<List<String>,List<String>> func3 = null;
 	
