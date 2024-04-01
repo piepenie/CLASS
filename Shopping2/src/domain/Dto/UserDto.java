@@ -1,19 +1,17 @@
 package domain.Dto;
 
 public class UserDto {
+	private int id;
 	private String user_id;
 	private String password;
 	private String name;
 	private String phone_number;
 	private String email;
 	private String role;
-	
-	public UserDto() {
-		
-	}
-	
-	public UserDto(String user_id, String password, String name, String phone_number, String email, String role) {
+
+	public UserDto(int id, String user_id, String password, String name, String phone_number, String email, String role) {
 		super();
+		this.id = id;
 		this.user_id = user_id;
 		this.password = password;
 		this.name = name;
@@ -21,11 +19,19 @@ public class UserDto {
 		this.email = email;
 		this.role = role;
 	}
-
 	@Override
 	public String toString() {
-		return "UserDto [user_id=" + user_id + ", password=" + password + ", name=" + name + ", phone_number="
-				+ phone_number + ", email=" + email + ", role=" + role + "]";
+		return "UserDto [id=" + id + ", user_id=" + user_id + ", password=" + password + ", name=" + name
+				+ ", phone_number=" + phone_number + ", email=" + email + ", role=" + role + "]";
+	}
+
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getUser_id() {
@@ -76,7 +82,8 @@ public class UserDto {
 		this.role = role;
 	}
 
-
-	
+	public UserDto() {
+		
+	}
 
 }
