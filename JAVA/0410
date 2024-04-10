@@ -1,2 +1,17 @@
 이 순간을 이겨낼 수 있는 힘을 주세요.
 
+1. Class.forName("");
+>> 드라이버 로드
+
+2. Connection con = DriverManager.getConnection(...);
+3. Statement st = con.createStatement(); 실행도구
+4. ResultSet rs = st.exectueQuery(sql) 결과값을 캐치해옴
+결과집합을 만드는 역할 (빈그릇을 제공)
+
+5. rs.close();
+6 st.close();
+7 con.close();
+
+
+5. rs.next(); 
+6. String title = re.getString("title");
