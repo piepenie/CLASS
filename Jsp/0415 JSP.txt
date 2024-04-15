@@ -1,0 +1,21 @@
+내장 객체
+request 객체
+response 객체
+session 객체(서버 클라이언트가 연결하는동안에 보관하는 공관)
+pageContext
+
+xml : 웹환경에서 전달하거나 전달받기위한 데이터 셋
+
+http://download.emmet.io/eclipse/updates/
+
+자바 파일 안에
+html css 가 있는걸
+
+forward 방식은 요청을 받고 담당자에게 제어권을 넘김
+사용처로는 시스템에 변화가 생기지 않는 단순조회시 forward 방식을 사용
+
+rediect 방식은 요청에 대한 처리를 직접하지 않음
+사용처로는 시스템에 변화가생기는 요청(글쓰기 글수정 회원가입 등)에 사용
+
+https://m.blog.naver.com/yl9517/222458464088
+ 
