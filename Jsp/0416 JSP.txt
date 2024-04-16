@@ -1,1 +1,5 @@
-11
+1) GetSession
+
+2) SetSession
+
+
