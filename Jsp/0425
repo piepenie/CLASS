@@ -1,0 +1,28 @@
+POSt 요청 
+
+서비스 호출시 
+객체 생성이 필요
+
+userService service;
+
+service = UserServiceImpl.getIstance();
+
+03 서비스 실행
+
+User user = new User(UserId ... 
+
+Map<String, Object> result;
+
+try {
+result = service.signUp(user); // 회원가입 로직 
+}  catch (SQLExceptioon e) {
+ e.
+connectionPool.txRollBack
+}
+
+index.jsp 에서 
+
+경고 창 띄우기 
+스크립 사용 
+
+requset 내장객체
