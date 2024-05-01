@@ -43,7 +43,7 @@ class Student {
 		return "Student [userid=" + userid + ", password=" + password + ", name=" + name + "]";
 	}
 	
-	//생성자(모든인자), 디폴트 생성자
+	//생성자(모든인자), 디폴트 생성자 // 생성자 
 	//getter and setter
 	//toString
 }
