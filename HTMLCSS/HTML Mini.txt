@@ -1,1 +1,54 @@
-dd
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* font-size: 50px; */
+        }
+        .red{
+            color: red;
+        }
+        #abc{
+            color: aqua;
+        }
+    </style>
+    <script defer src="loginidex.js"></script>
+</head>
+<body>
+    <a href="http://naver.com">naver</a>
+    <br>
+    <a href="/about">about</a>
+    <br>
+    <span>Hello</span>
+    <span>World</span>
+    <br>
+
+    <input type="text" value="안녕하세요" placeholder="이름을 입력하세요!">
+
+    <label>
+        <input type="checkbox">apple
+    </label>
+
+    <label>
+        <input type="radio" name="fruits">apple
+    </label>
+    <label> 
+        <input type="radio" name="fruits">banana
+    </label>
+
+    <br>
+
+    <a href="https://www.naver.com" target="_blank" title="네이버로 이동">Naver</a>
+    <br>
+
+    <span id="abc">동해물</span>과 백두산이 마르고 닳도록 하느님이 보우하사 <span class="red">우리나라</span>만세
+
+    <div data-fruit-name="apple">사과</div>
+    <div data-fruit-name="banana">바나나</div>
+
+
+</body>
+</html>
