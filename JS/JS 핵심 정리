@@ -9,9 +9,30 @@ let hello = `Hello ${myName}?!`
 let hello = `Hello ${myName}?!`
 {} 
 다른 데이터들을끼워 넣을때 사용함
-cf) "" 를 쓰던 '' 쓰던 다를게 없음 걍 둘 다 똑같음. but `` 인 백틱 기호는 보간법을 이용할때 사용하는 방법이니 주의
+cf) "" 를 쓰던 '' 쓰던 다를게 없음 걍 둘 다 똑같음. but `` 
+인 백틱 기호는 보간법을 이용할때 사용하는 방법이니 주의
+{} 중괄호에 내용을 채워넣는 방법
 
 Number(숫자 데이터)
-// 
+let number = 123;
+let opacity = 1.57;
 
-//
+console.log(number); // 123
+console.log(opacity); // 1.57
+
+Boolean(불린 데이터)
+// true, false 두 가지 값밖에 없는 논리 데이터
+let checked = true; 
+let isShow = false;
+
+console.log(checked); // true
+console.log(isShow); // false 
+
+Undefined(값이 할당되지 않음)
+// 값이 할당되지 않은 상태를 나타냄
+let undef;
+let obj = { abc: 123 } ;
+
+console.log(undef); // undefined
+console.log(obj.abc); // 123
+console.log(obj.xyz); // undefined
