@@ -29,3 +29,9 @@ boxEl.addEventListener('click', 2);
 boxEl.addEventListener('click', function () {
  console.log('Click~!');
 });
+
+// HTML 요소(Element) 1개 검색/ 찾기
+const boxEl = documnet.querySelector('.box')
+
+// 요소의 클래스 정보 객체 활용!
+boxEl.classList.add('active');
