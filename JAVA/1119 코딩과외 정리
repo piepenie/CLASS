@@ -1,0 +1,82 @@
+User = Method Area(Static Area)
+= static 이라고 붙은 애들이 여기에 저장됨.
+>> static area 가장먼저 메모리가 할당되는 영역으로 올라간다.
+JVM 메모리 할당영역에 제일 먼저 올리는것.
+
+user1 = Stack Area
+new User = Heap Area
+
+jvm 멀티 스레드 메모리 구조 
+Thread >> 기본 개념
+Process >> 
+
+메서드에 대해서
+일련의 코드의 집합체 
+
+서버가 뭐에요? 요청과 응답으로 이루어져있다.
+메서드도 요청과 응답으로 이루어져있다.
+
+자바에서 에러
+컴파일 예외, 런타임 예외
+.class 파일로 변환될때 걸리는 에러가
+컴파일예외(개발자가 겪는 예외)
+
+자바 코드 JVM 
+.class 파일로 변환됫지만, 
+런타임 문제는 JVM 에서 문제가생기는거 
+(유저가 겪을수있는 예외)
+
+서버 >> 요청과 응답 (제일 중요함)
+this 라는건 본인은 클래스라는걸 말한다.
+
+
+Q. 생성자?? 갑자기 기억이안남.    
+//생성자는 객체를 인스턴스로 만들 수 있는 방법을 정의하는 것.
+    public Car(int w, int e, int b) { //매개변수, 파라미터
+        this.w = w;
+        this.e = e;
+        this.b = b;
+    }
+
+  //응답  //요청
+    public Car getNewCar() {
+        return new Car(4, 1, 1);
+    }
+
+public class Human {
+
+    public String name;
+    public int age;
+
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    /**
+     * 메소드는 일련의 코드의 집합체
+     * 호출되면 안에있는 코드가 실행된다.
+     */
+    public void walk(){
+        System.out.println("Human 걸었음!");
+    }
+
+    /*
+     * void : 공허한
+     * Return이 없음.
+     *
+     * 요청과 응답으로 이루어져있다.
+     * 메소드도 요청과 응답으로 이루어져 있음.
+     *
+     * 요청은 메소드 이름 + 파라미터
+     * 응답은 return a + b;
+     *
+     * void는 응답이 없다는 명세
+     */
+    public int add(int a, int b){ // 하나의 명세. 명세를 지키지 않으면 실행도 안됨. (컴파일 에러가 발생)
+
+        // 여기 코드가 몇만줄이 넘어가더라도.
+
+        return a + b;
+    }
+}
