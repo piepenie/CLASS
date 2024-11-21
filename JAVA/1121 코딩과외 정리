@@ -1,0 +1,18 @@
+함수
+
+이니시에이트
+
+인스턴스화 >>
+
+jvm 멀티 스레드 메모리 구조 
+Thread >> 기본 개념
+Process >> 
+
+
+  //응답  //요청
+    public Car getNewCar() {
+        return new Car(4, 1, 1);
+    }
+
+>> 한번만 더 설명 필요
+
