@@ -1,0 +1,86 @@
+Q1. 행열이 왜케 헷갈림. 행  열 
+public class TwoDimensionalArray {
+    public static void main(String[] args) {
+        int[][] scores = { // 행 3 열 3 
+            {90, 85, 80},
+            {75, 95, 100},
+            {88, 78, 92}
+        };
+        
+        System.out.println("학생들의 점수:");
+        for (int[] row : scores) {       // 행 반복
+            for (int score : row) {      // 열 반복
+                System.out.print(score + " ");
+            }
+            System.out.println();  // 한 행 출력 후 줄 바꿈
+        }
+    }
+}
+
+Q2. 배열이 힢 메모리에 들어가는 방식에 대해선 따로 생각할 필요가없나?
+
+
+Q3. 증감연산자 감소연산자가 좀 헷갈림 (이부분은 그냥 참고정도로 알고있으면됨)
+전위 ++a --a 
+후위 a++ a-- 의 차이 
+
+import java.util.Scanner;
+
+class Play{
+    void gugu(int...args){
+Q4.        int result; // 없어도 되는데 왜 넣은거야? >> 해당 값은 없어도됨 반환값을 굳이 안줘도되는데 왜 있어야하냐임
+        for(int dan : args){ // Q5. 입력받은 단까지의 출력을 위해 향상된 for문?
+            for(int i =1; i<=9;i++){
+                System.out.println(dan +"X"+i +"="+(dan*i));
+            }
+            System.out.println();
+        }
+    }
+}
+
+public class gugudan{
+    public static void main(String[] args) {
+        Play g = new Play();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("구구단 값을 입력하세요 : ");
+        int num = scan.nextInt();
+        g.gugu(num);
+    }
+}
+
+public class MaxMinValue {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+
+        // min value
+        int min=(a<b) ? a : b;
+        System.out.println("min = " + min);
+
+        // max value
+ Q5.      int max=(a>b) ? a : b; 왼쪽에 오는 조건이 true 일때 a를 반환한다. 아니면 b를 반환한다. 
+
+true ? a : b >> a 
+false ? a : b >> b
+
+        System.out.println("max = " + max);
+    }
+}
+
+Q6. 중첩 클래스의 종류(존재이유에 대해서만 알아두기) 
+자바에서 중첩 클래스는 크게 4가지
+
+인스턴스 내부 클래스 (Instance Inner Class) 
+
+정적 내부 클래스 (Static Nested Class)
+
+지역 클래스 (Local Class) // 이건 진짜 그런게 있다.(사용잘 안함)
+
+익명 클래스 (Anonymous Class) (사용해야됨) 
+>> 임시로 사용하려고 쓰는 
+(재사용성이 떨어지는 친구를 구현할때)
+
+포괄적인 개념 >> 차는 달릴 수 있다. 멈출 수 있다. >> 추상화 인터페이스 (추상체)
+구현체 >> implements  
+
+
