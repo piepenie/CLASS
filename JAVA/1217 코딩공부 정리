@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+class Play{
+    void gugu(int...args){
+        int result;
+        for(int dan : args){ // 입력받은 단까지의 출력을 위해 향상된 for문 사용
+            for(int i =1; i<=9;i++){
+                System.out.println(dan +"X"+i +"="+(dan*i));
+            }
+            System.out.println();
+        }
+    }
+}
+
+public class gugudan{
+    public static void main(String[] args) {
+        Play g = new Play();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("구구단 값을 입력하세요 : ");
+        int num = scan.nextInt();
+        g.gugu(num);
+    }
+}
+
+int[] a = new int[5];
+
+5 = a.length 
+
+for(int i = 0; i<a.length; i++) {
+	a[i] = 10;
+	sout(a[i]);
+}
+
+행열이 왜케 헷갈리지?
+public class TwoDimensionalArray {
+    public static void main(String[] args) {
+        int[][] scores = {
+            {90, 85, 80},
+            {75, 95, 100},
+            {88, 78, 92}
+        };
+        
+        System.out.println("학생들의 점수:");
+        for (int[] row : scores) {       // 행 반복
+            for (int score : row) {      // 열 반복
+                System.out.print(score + " ");
+            }
+            System.out.println();  // 한 행 출력 후 줄 바꿈
+        }
+    }
+}
+
+배열이 힢 메모리에 들어가는 방식에 대해선 따로 생각할 필요가없나?
+
