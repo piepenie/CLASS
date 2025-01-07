@@ -18,7 +18,7 @@ People man = new People();
 메서드는 크게 API 에서 제공해주는 메서드와 
 사용자 정의 메서드의 두 종류로 분류할 수 있음
 
-OOP 
+OOP(object-oriented programming)
 1.추상화
 2.캡슐화
 3.상속
