@@ -22,3 +22,11 @@ public class TestInheritance {
 }
 
 에서 
+
+1) obj 는 Parent 타입 참조 변수지만, child 객체를 참조 하고 있음
+>> Upcasting : child 객체가 parent 타입으로 참조됨.
+
+2) obj.show(); 호출시 동적 바인딩 발생
+>> 따라서 Parent 타입의 참조 변수 obj 를 호출하더라도. 실행되는건 child 클래스 show() 임
+
+결과 값 : Child: 20 이라는 값이 출력됨.
