@@ -1,0 +1,24 @@
+class Parent {
+    int value = 10;
+
+    void show() {
+        System.out.println("Parent: " + this.value);
+    }
+}
+
+class Child extends Parent {
+    int value = 20;
+
+    void show() {
+        System.out.println("Child: " + this.value);
+    }
+}
+
+public class TestInheritance {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.show();
+    }
+}
+
+에서 
