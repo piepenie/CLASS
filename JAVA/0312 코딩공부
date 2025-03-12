@@ -1,0 +1,20 @@
+public class Example {
+    // 멤버 변수
+    private String name = "John";
+
+    public void showName() {
+        // 지역 변수
+        String name = "Alice";
+        System.out.println("지역 변수 name: " + name); // Alice
+        System.out.println("멤버 변수 name: " + this.name); // John
+    }
+
+    public static void main(String[] args) {
+        Example ex = new Example();
+        ex.showName();
+    }
+}
+
+지역 변수 name: Alice
+멤버 변수 name: John
+
