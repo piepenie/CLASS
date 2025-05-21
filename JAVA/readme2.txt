@@ -23,7 +23,18 @@ ex) int >> 4byte 라는 크기와 정수라는 종류가 들어감
 자료형 변수이름
 int      a   
 
-
 사용자 정의 자료형
+ex)String (FindAPI 클래스)
 
-String 
+문자자료형(char)
+아스키 코드 >> 수치로 약속되어있음
+
+객체지향 도구 >> CLASS (사용자 정의 자료형)
+
+CLASS = 새로운 자료형을 만드는 도구
+
+FindAPI 클래스 (API = 메뉴판 같은 느낌)
+API = 클래스들의 집합체
+자바설치하면 >> External Libraries 에 API 들이있음
+
+MSB : 부호 비트 
