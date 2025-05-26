@@ -50,3 +50,7 @@ Method Area
 Heap Area
 Stack Area
 Runtime Constant Pool
+
+SW 소프트웨어
+JVM 자바 버츄어 머신
+OS 해당 OS 환경(win, mac, Linux or Something)
