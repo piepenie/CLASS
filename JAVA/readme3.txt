@@ -18,13 +18,20 @@ CASTING (형변환)
 
 '\uAC00' >> 한글이란뜻
 
-실행가능한 파일(out = 폴더명) .class 로 만들어진다(byte code)
-(저급언어 = 컴퓨터 이해 언어)
+Java 실행 구조 요약
 
-소스파일(src = 폴더명) .java 로 저장된다. (고급언어 = 인간이해언어)
- 
-고급언어 >> 저급언어 로 번역해주는게 Compiler 컴파일러
-그리고 그 컴파일러를 자바에서 JDK 라고 부름
+1. 소스 파일 작성: HelloWorld.java (고급 언어, 인간이 이해하는 언어)
+2. 컴파일: javac HelloWorld.java → HelloWorld.class (바이트코드, JVM이 이해하는 언어)
+3. 실행: java HelloWorld → JVM이 바이트코드를 실행
+
+JVM 동작 구조:
+- Class Loader: .class 파일을 메모리에 로드
+- Execution Engine: 바이트코드를 해석하거나 JIT 컴파일하여 실행
+- JVM 메모리 구조:
+   - Method Area: 클래스 구조, static 등
+   - Heap: 객체 저장
+   - Stack: 메서드 호출, 지역 변수
+   - Runtime Constant Pool: 상수 정보 저장
 
 사람 > 도구or메뉴판(API) 
 미리 만들어놓은 API 도구들의 모음
@@ -40,16 +47,9 @@ intellij 에 연결된 JDK에서 처리해주는것
 
 이후 RUN을 하는순간
 C:\>java.exe HelloWorld : 실행
- >> RPC(원격프로세스호출) : JVM이 동작함
+ >> JVM이 동작함 RPC는 기능 호출 시스템같은거
 Class Loader (메모리에 로딩시킴)
 Execute 실행시킴 
-
-JVM 의 메모리 모델 (Runtime Data Area)
-
-Method Area
-Heap Area
-Stack Area
-Runtime Constant Pool
 
 SW 소프트웨어
 JVM 자바 버츄어 머신
