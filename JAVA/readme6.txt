@@ -20,11 +20,10 @@ ex) 책에는 제목이라는 속성이있고 가격이라는 속성이있고
 
 ex) BOOK >> 이란 클래스를 만들었을 때 해당 클래스에 변수를 만들어놓아서 새로운 자료형을 만들어놓는다.
 public class Book {
-    String title;
-    int price;
-    String company;
-    String author;
-    int page;
-    String isbn;
-
+    public String title;
+    public int price;
+    public String company;
+    public String author;
+    public int page;
+    public String isbn;
 }
