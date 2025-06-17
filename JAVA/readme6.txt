@@ -17,3 +17,14 @@ ex) 책에는 제목이라는 속성이있고 가격이라는 속성이있고
 가상세계(컴퓨터)안에 넣으려고 함
 
 클래스 내부에 변수들을 생성해놓음
+
+ex) BOOK >> 이란 클래스를 만들었을 때 해당 클래스에 변수를 만들어놓아서 새로운 자료형을 만들어놓는다.
+public class Book {
+    String title;
+    int price;
+    String company;
+    String author;
+    int page;
+    String isbn;
+
+}
