@@ -62,3 +62,18 @@ int[] arr = new int[5];  // 인덱스 0 ~ 4까지 존재
 for (int i = 0; i <= 5; i++) {
     System.out.println(arr[i]);  // i가 5일 때 오류 발생
 }
+
+
+public class ArrayExam {
+    public static void main(String[] args) {
+        // Q. 아래 char[] 배열에 APPLE 이라는 문자가 저장되어 있다. 대문자로 된 APPLE 을 소문자 apple 로 출력하세요.
+        char[] c = {'A','P','P','L','E'}; // 아스키코드값에서 소문자로 돌아가려면 각각 -값을 더해주면 될거같거든? 32만큼 더해주면됨 각각
+        for(int i=0; i<c.length; i++){
+            System.out.println((char)(c[i]+32)); // 형변환을 내가 헷갈렷어!
+        }
+        int A = 'A';
+        System.out.println("A = " + A);
+        int a = 'a';
+        System.out.println("a = " + a); // 헷갈린 아스키 코드값을 불러오기 위해서 출력함
+    }
+}
