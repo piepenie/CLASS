@@ -1,0 +1,22 @@
+public class BasicArrayTest {
+    public static void main(String[] args) {
+        float[] f = new float[3];
+        for (int i = 0; i < f.length; i++) {
+            f[0] = 17.4f;
+            f[1] = 59.2f;
+            f[2] = 34.8f;
+            System.out.println( "f" + [i] + f[i] + "f;");
+        }
+
+    }
+}  
+
+이 부분에서 "[i]" 부분이 잘못된 문법이에요.
+
+Java에서는 배열 요소를 출력할 때 인덱스를 이렇게 표현하지 않습니다. "f" + [i] → 여기서 [i]는 문법적으로 의미가 없기 때문에 컴파일 오류가 발생
+*문법 오류*
+          System.out.println("f[" + i + "] = " + f[i] + "f;");
+수정된 구문. >> 정상 출력. 
+f[0] = 17.4f;
+f[1] = 59.2f;
+f[2] = 34.8f;
