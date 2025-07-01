@@ -25,3 +25,5 @@ f[2] = 34.8f;
 배열을 이용해서 객체를 정리하는거 마치 사물함 정리처럼 생각하면 좋아.
 Movie[] arr = new Movie[3];   // [null][null][null]
 arr[0] = new Movie();         // [Movie@주소][null][null]
+
+
