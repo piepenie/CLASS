@@ -22,8 +22,17 @@ f[1] = 59.2f;
 f[2] = 34.8f;
 
 ////
+
 배열을 이용해서 객체를 정리하는거 마치 사물함 정리처럼 생각하면 좋아.
 Movie[] arr = new Movie[3];   // [null][null][null]
 arr[0] = new Movie();         // [Movie@주소][null][null]
 
+////
+
+2차원 배열(이미지를 표현하는)
+ex) Pixel(픽셀) 256 x 256(이미지)
+
+int[] socre = new int[][];
+ex)int[] socre = new int[3][3];
+9칸짜리 3x3행열이 만들어짐 앞이 행(세로) 뒤가 열(가로)
 
