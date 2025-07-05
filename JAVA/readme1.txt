@@ -8,6 +8,11 @@
 객체 기본구조
 
 속성(Attribute)
+클래스 몸체 안에 선언된 변수는 보통 다음처럼 부릅니다.
+field	필드:	클래스 블록 안에 선언된 변수 전체를 통칭. JLS(Java Language Specification)에서 쓰는 공식 용어.
+member variable	멤버 변수:	“클래스의 구성원(member)인 변수”란 뜻. 필드와 사실상 같은 말로 흔히 씀.
+instance variable	인스턴스 변수:	static 이 아닌 필드. 객체(인스턴스)가 생성될 때마다 개별 값을 가짐.
+property / attribute	속성:	객체가 가진 데이터를 뭉뚱그려 표현할 때 자주 쓰는 일반 용어. 자바 언어 차원의 공식 키워드는 아님.
 
 객체를 표현하는 데이터값
 저장의 대상
