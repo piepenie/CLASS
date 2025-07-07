@@ -36,3 +36,5 @@ int[] socre = new int[][];
 ex)int[] socre = new int[3][3];
 9칸짜리 3x3행열이 만들어짐 앞이 행(세로) 뒤가 열(가로)
 
+
+
