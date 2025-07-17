@@ -13,5 +13,5 @@ Python input
 
 출력하는 함수
 C언어 printf puts 
-Java sout.print()
+Java System.out.print();
 Python print 
