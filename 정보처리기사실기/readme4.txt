@@ -28,3 +28,23 @@ public class StringLengthProblem {
 }
 
 A : 5 (문자열 값이 10이고, 해당 케이스에 적합한 결과값이 없으므로 default 값으로 출력됨)
+
+public class SwitchProblem2 {
+    public static void main(String[] args) {
+        int i = 10; int k = 1;
+        switch (i)
+        {
+            case  1 : k += 1;
+            case  2 : k ++;
+            case  3 : k = 0;
+            case  4 : k += 3;
+            case  5 : k -= 10;
+            default : k --;
+
+        }
+        System.out.println("k : " + k);
+    }
+}
+
+A : 0 (i 값이 10이고 해당 케이스에 적용된것이 없으므로 k값이 1인 상태에서 -1 이되어 0이 출력된다)
+
