@@ -32,7 +32,6 @@ int main() {
 	return 0;
 
 }
-
 A : 출력값
 intArray: (한줄 내려감 \n 때문에)
 12345 (붙여져서 나옴)
