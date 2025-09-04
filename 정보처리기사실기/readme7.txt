@@ -18,6 +18,13 @@ int main() {
 	printf("3.");
 	for (int i =0; str[i] != '\0'; i++ ){
 		printf("%c",str[i]);
+
+	// 4. 포인터 연산으로 문자 하나씩 출력
+	
+
+	// 5. strlen 함수를 사용하여 문자 하나씩 출력
+
+
 	}
 	
 	
